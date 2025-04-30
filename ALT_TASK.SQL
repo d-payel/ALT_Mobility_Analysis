@@ -1,3 +1,20 @@
+/* CHECK FOR NULL VALUES IN EACH TABLE*/
+select 
+  countif(order_id is Null) as missing_order,
+  countif(customer_id is Null) as missing_customer_id ,
+  countif(order_date is Null) as missing_order_date,
+  countif(order_amount is Null) as missing_order_amount ,
+  countif(shipping_address is Null) as missing_address,
+  countif(order_status is Null) as missing_status,
+from `customer_orders.customer_orders` ;
+
+select countif(payment_id is Null) as missing_payment,
+  countif(order_id is Null) as missing_order,
+  countif(payment_date is Null) as missing_payment_date ,
+  countif(payment_amount is Null) as missing_payment_amount,
+  countif(payment_method is Null) as missing_payment_method ,
+  countif(payment_id is Null) as missing_payment_id
+from `alt-mobility-task.customer_orders.payments` ;
 -- Order and Sales Analysis
 -- Total orders and revenue by order status
 select 
@@ -22,24 +39,6 @@ select * from `customer_orders.customer_orders` limit 10;
 select * from `alt-mobility-task.customer_orders.payments` limit 10;
 select count(*) from `customer_orders.customer_orders`;
 select count(*) from `alt-mobility-task.customer_orders.payments`;
-
-/* CHECK FOR NULL VALUES IN EACH TABLE*/
-select 
-  countif(order_id is Null) as missing_order,
-  countif(customer_id is Null) as missing_customer_id ,
-  countif(order_date is Null) as missing_order_date,
-  countif(order_amount is Null) as missing_order_amount ,
-  countif(shipping_address is Null) as missing_address,
-  countif(order_status is Null) as missing_status,
-from `customer_orders.customer_orders` ;
-
-select countif(payment_id is Null) as missing_payment,
-  countif(order_id is Null) as missing_order,
-  countif(payment_date is Null) as missing_payment_date ,
-  countif(payment_amount is Null) as missing_payment_amount,
-  countif(payment_method is Null) as missing_payment_method ,
-  countif(payment_id is Null) as missing_payment_id
-from `alt-mobility-task.customer_orders.payments` ;
 
 /* QUANTILE TABLE CREATION FOR CUSTOMER SEGMENTATION BASED ON RFM */
 CREATE TABLE `alt-mobility-task.customer_orders.quantile` AS
