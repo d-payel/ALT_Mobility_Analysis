@@ -15,6 +15,17 @@ select countif(payment_id is Null) as missing_payment,
   countif(payment_method is Null) as missing_payment_method ,
   countif(payment_id is Null) as missing_payment_id
 from `alt-mobility-task.customer_orders.payments` ;
+
+-- CREATING A VIEW TABLE WHERE YEAR AND MONTHS ARE SEPARATED
+create or replace view `alt-mobility-task.customer_orders.orders_with_date_parts` as
+select
+  *,
+  extract(year from order_date) as year,
+  extract(month from order_date) as month,
+  format_date('%Y-%m', order_date) as order_month,
+  format_date('%b', order_date) as month_name
+from `alt-mobility-task.customer_orders.customer_orders`;
+
 -- Order and Sales Analysis
 -- Total orders and revenue by order status
 select 
@@ -25,13 +36,15 @@ from `alt-mobility-task.customer_orders.customer_orders`
 group by order_status;
 
 -- Monthly revenue trend
-select 
-  format_date('%Y-%m', DATE(order_date)) as order_month,
-  count(order_id) as total_orders,
-  sum(order_amount) as total_revenue
-from `alt-mobility-task.customer_orders.customer_orders`
-group by order_month
-order by order_month;
+select dense_rank() over (partition by year order by total_revenue desc),*
+from (
+  select
+    year, month, 
+    count(order_id) total_orders, round(sum(order_amount),2) total_revenue
+  from `alt-mobility-task.customer_orders.orders_with_date_parts`
+  group by year, month
+  ) as tot_rev
+order by total_revenue desc;
 
 /* CUSTOMER SEGMENTATION */
 --QUANTILE TABLE CREATION
@@ -51,6 +64,7 @@ WITH last_first_order AS (
   FROM `customer_orders.customer_orders`
   GROUP BY customer_id
 ),
+/* To calculate the reference date: The last order date in the entire dataset */
 cal_ref_date AS (
   SELECT *, 
          MAX(last_order_date) OVER() + 1 AS ref_date, 
