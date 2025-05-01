@@ -17,14 +17,22 @@ select countif(payment_id is Null) as missing_payment,
 from `alt-mobility-task.customer_orders.payments` ;
 
 -- CREATING A VIEW TABLE WHERE YEAR AND MONTHS ARE SEPARATED
+-- For the Order table
 create or replace view `alt-mobility-task.customer_orders.orders_with_date_parts` as
 select
   *,
   extract(year from order_date) as year,
-  extract(month from order_date) as month,
-  format_date('%Y-%m', order_date) as order_month,
-  format_date('%b', order_date) as month_name
+  format_date('%b', order_date) as month
 from `alt-mobility-task.customer_orders.customer_orders`;
+
+-- For the payment table
+create or replace view `alt-mobility-task.customer_orders.payments_with_date_parts` as
+select
+  *,
+  extract(year from payment_date) as year,
+  format_date('%b', payment_date) as month
+from `alt-mobility-task.customer_orders.payments`;
+
 
 -- Order and Sales Analysis
 -- Total orders and revenue by order status
@@ -35,7 +43,7 @@ select
 from `alt-mobility-task.customer_orders.customer_orders`
 group by order_status;
 
--- Monthly revenue trend
+-- MONTHLY RANKING BASED ON TOTAL REVENUE GENERATION
 select dense_rank() over (partition by year order by total_revenue desc),*
 from (
   select
@@ -182,41 +190,45 @@ group by payment_status;
 
 -- monthly payment trend
 select 
-  format_date('%y-%m', date(payment_date)) as payment_month, 
+  year,month, 
   payment_status,
   count(payment_id) as total_transactions,
   sum(payment_amount) as total_amount
-from `alt-mobility-task.customer_orders.payments`
-group by payment_month, payment_status
-order by payment_month;
+from `alt-mobility-task.customer_orders.payments_with_date_parts`  /* From View Table */
+group by year,month, payment_status
+order by year, month;
+
+select month, count(payment_id) total_number_of_payments
+from `alt-mobility-task.customer_orders.payments_with_date_parts`
+group by month
+order by 2 desc;
 
 --Payment status dynamics over month
 with payment_dynamics as (
   select 
-    extract(year from date(payment_date)) as year,
-    format_date('%b', date(payment_date)) as month,
+    year, month,
     countif(payment_status = 'completed') as successful_payments,
     countif(payment_status = 'failed') as failed_payments,
     round(
       countif(payment_status = 'completed') / count(payment_id), 2
     ) as success_rate
-  from `alt-mobility-task.customer_orders.payments`
+  from `alt-mobility-task.customer_orders.payments_with_date_parts`
   group by year, month
 ),
 
-ranked_failures as (
+ranked_success as (
   select *,
-    rank() over (partition by year order by failed_payments desc) as failure_rank /* check whether there's gateway problem in any a specific month*/
-    --rank() over (partition by year order by success_rate desc) as success_rank
+    dense_rank() over (partition by year order by success_rate desc) as success_rank
+    -- dense_rank() over (partition by year order by failed_payments desc) as failure_rank /* check whether there's gateway problem in any a specific month*/
   from payment_dynamics
 )
 
 select *
-from ranked_failures
-where failure_rank <=3
---where success_rank <=3
-order by year, failure_rank;
---order by year, success_rank;
+from ranked_success
+where success_rank <= 3
+--where failure_rank <=3
+order by year, success_rank;
+--order by year, failure_rank;
 
 -- full order and payment details report
 with full_table as (select 
