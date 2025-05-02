@@ -50,7 +50,7 @@ Performed null-value checks on both datasets to assess completeness:
   **Example:** `"Pending" orders had ~27% missing payments`
   ![Distribution of Missing Payments](percentage_of_missing_payments.png)
 - Calculated Payment Success Rate of each Customer 
-  ![Distribution of Payment Success Rate at Individual Customer Level](payment_success_rate_by_customer.png)
+  ![Distribution of Payment Success Rate at Individual Customer Level](payment_success-rate_by-customer.png)
 
 ### 6. 📊 Order-Payment Summary Per Customer
 
