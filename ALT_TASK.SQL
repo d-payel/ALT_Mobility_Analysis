@@ -249,6 +249,14 @@ left join `alt-mobility-task.customer_orders.payments` p
 from full_table
 order by order_id;*/
 
+-- Distribution of Missing Payments Records Across Order Statuses
+select order_status,
+  countif(payment_id is null) missing_payment, count(order_id) total_order,  
+  concat(round(countif(payment_id is null)*100/count(order_id),2),'%') percentage_of_missing_payment
+from full_table
+group by order_status
+
+
 -- aggregated customer-level order and payment summary
 
 select 
