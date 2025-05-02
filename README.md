@@ -114,8 +114,10 @@ The customer retention analysis was fully executed and visualized in Tableau usi
 
 - X-axis: `Elapsed Time` (in months since first order)
 - Y-axis: `Cohort Quarter` (customer's first purchase quarter)
-- Cell color: `Retention Rate (%)`  
-  **Insight:**
+- Cell color: `Retention Rate (%)`
+  
+  **Insights:**
+  
   - **Retention drops sharply after initial acquisition :** Across all cohorts, there is a steep drop in retention  from month 0 (100%) to month 1. Example: 2020 Q1 drops from 100% to 7.4% in month 1. This suggests a large portion of users churn immediately after joining.
   - **Long-term retention stabilizes for early cohorts :** Some early cohorts like 2020 Q1 – Q3 and 2021 Q1 – Q3 show consistent retention beyond 12+ months. Example: 2020 Q2 maintains 2.4% even at month 21.
   - **Recent cohorts have not matured yet :** Recent cohorts like 2024 Q2–2025 Q2 show very few data points, as not enough time has elapsed. These rows are sparse, and their long-term retention is yet to be observed.
