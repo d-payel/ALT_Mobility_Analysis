@@ -66,13 +66,45 @@ Performed null-value checks on both datasets to assess completeness:
 
 ### 7. 📈 Customer Retention Analysis (Cohort)
 
-- Created cohort months using the first order month of each customer
-- Calculated **cohort index** (elapsed time since first order in months)
-- Measured monthly retention as:  
-  `retention_rate = active_customers / cohort_size * 100`
-- Exported retention matrix for **Tableau heatmap**
+The customer retention analysis was fully executed and visualized in Tableau using a cohort-based approach. Tableau's flexible LOD expressions were used to build a dynamic, interactive retention heatmap.
 
----
+📌 Tableau Logic Breakdown:
+Customer Cohort Definition
+
+Created a calculated field:
+Customer's First Quarter =
+{ FIXED [Customer ID] : MIN(DATETRUNC('quarter', [Order Date])) }
+
+Converted this field to a dimension and used the second "Quarter" format in Tableau (with year).
+
+Order Timeline (X-axis)
+
+Dragged Order Date to Columns
+
+Changed its type to the second "Quarter" format with year.
+
+Cohort Size Calculation
+
+Calculated field:
+Customers in First Quarter =
+{ FIXED [Customer's First Quarter] : COUNTD([Customer ID]) }
+
+Used as a dimension and placed in the Tooltip.
+
+Retention Rate Calculation
+
+Calculated field:
+Retention Rate =
+COUNTD([Customer ID]) / SUM([Customers in First Quarter])
+
+Converted to percentage and added to Color and Tooltip.
+
+Elapsed Time (Optional for Slicing)
+
+Calculated field:
+Elapsed Time =
+DATEDIFF('quarter', [Customer's First Quarter], [Order Date])
+
 
 ## 📊 Tableau Visualization
 
