@@ -38,6 +38,7 @@ Performed null-value checks on both datasets to assess completeness:
   - Champions, Loyal Customers, Potential Loyalists, At Risk, Hibernating, Lost, etc.
 - Final table: `quantile` with segment labels
   ![Customer with Labels](rfm_segmentation_table.png)
+- [The new table with the cutomers labeled based on their RFM score](RFM_segmentation_table.png)
 
 ### 4. 💳 Payment Status Analysis
 
