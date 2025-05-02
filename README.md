@@ -33,6 +33,7 @@ Performed null-value checks on both datasets to assess completeness:
   - `Recency`: days since last order
   - `Frequency`: orders per active month
   - `Monetary`: total order value
+    ![Quantile Table](quantile_table.png)
 - Created scores from 1 to 5 for each metric and assigned customers to **RFM segments** like:
   - Champions, Loyal Customers, Potential Loyalists, At Risk, Hibernating, Lost, etc.
 - Final table: `quantile` with segment labels
