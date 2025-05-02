@@ -46,6 +46,7 @@ Performed null-value checks on both datasets to assess completeness:
 - Created a **monthly payment trend report** using a view `payments_with_date_parts`
 - Used `DENSE_RANK()` on success rates to identify **top 3 months per year** with highest payment success
 - Highlighted months with highest payment failures and analyzed status trends
+  [payment_status_dynamics](payment_status_dynamics_over_month.png)
 
 ### 5. ❌ Missing Payments Report
 
