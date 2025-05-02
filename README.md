@@ -69,7 +69,7 @@ Performed null-value checks on both datasets to assess completeness:
 
 ### **Customer Cohort Retention Heatmap**
 
-![Customer Retention Heatmap](visualizations/retention_rate_visualization_task5.png)
+![Customer Retention Heatmap](retention_rate_visualization_task5.png)
 
 - X-axis: `Elapsed Time` (in months since first order)
 - Y-axis: `Cohort Quarter` (customer's first purchase quarter)
