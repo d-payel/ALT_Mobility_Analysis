@@ -71,39 +71,39 @@ The customer retention analysis was fully executed and visualized in Tableau usi
 📌 Tableau Logic Breakdown:
 - Customer Cohort Definition
 
-Created a calculated field:
-Customer's First Quarter =
-{ FIXED [Customer ID] : MIN(DATETRUNC('quarter', [Order Date])) }
+  - Created a calculated field:
+    Customer's First Quarter =
+    { FIXED [Customer ID] : MIN(DATETRUNC('quarter', [Order Date])) }
 
-Converted this field to a dimension and used the second "Quarter" format in Tableau (with year).
+  - Converted this field to a dimension and used the second "Quarter" format in Tableau (with year).
 
-Order Timeline (X-axis)
+- Order Timeline (X-axis)
 
-Dragged Order Date to Columns
+  - Dragged Order Date to Columns
 
-Changed its type to the second "Quarter" format with year.
+  - Changed its type to the second "Quarter" format with year.
 
-Cohort Size Calculation
+- Cohort Size Calculation
 
-Calculated field:
-Customers in First Quarter =
-{ FIXED [Customer's First Quarter] : COUNTD([Customer ID]) }
+  - Calculated field:
+    Customers in First Quarter =
+    { FIXED [Customer's First Quarter] : COUNTD([Customer ID]) }
 
-Used as a dimension and placed in the Tooltip.
+    Used as a dimension and placed in the Tooltip.
 
-Retention Rate Calculation
+- Retention Rate Calculation
 
-Calculated field:
-Retention Rate =
-COUNTD([Customer ID]) / SUM([Customers in First Quarter])
+  - Calculated field:
+    Retention Rate =
+    COUNTD([Customer ID]) / SUM([Customers in First Quarter])
 
-Converted to percentage and added to Color and Tooltip.
+    Converted to percentage and added to Color and Tooltip.
 
-Elapsed Time (Optional for Slicing)
+- Elapsed Time (Optional for Slicing)
 
-Calculated field:
-Elapsed Time =
-DATEDIFF('quarter', [Customer's First Quarter], [Order Date])
+  - Calculated field:
+    Elapsed Time =
+    DATEDIFF('quarter', [Customer's First Quarter], [Order Date])
 
 
 ## 📊 Tableau Visualization
