@@ -48,6 +48,7 @@ Performed null-value checks on both datasets to assess completeness:
 - Aggregated missing `payment_id`s across different `order_status`
 - Calculated the percentage of missing payments by status  
   **Example:** `"Pending" orders had ~34% missing payments`
+  ![Distribution of Missing Payments](percentage_of_missing_payments.png)
 
 ### 6. 📊 Order-Payment Summary Per Customer
 
