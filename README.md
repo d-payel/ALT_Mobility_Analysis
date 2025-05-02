@@ -17,7 +17,8 @@ This repository contains SQL analysis and a Tableau visualization developed as p
 
 Performed null-value checks on both datasets to assess completeness:
 - Checked for missing `order_id`, `payment_id`, `order_amount`, `payment_status`, etc.
-- Result: Payments table had some null `payment_id` values, which were later analyzed against `order_status`.
+- Result: customer Order table had no null `order_id` values.
+  ![check for null values in the customer order table](check_null.png)
 
 ### 2. 📦 Order and Sales Analysis
 
