@@ -19,7 +19,6 @@ Performed null-value checks on both datasets to assess completeness:
 - Checked for missing `order_id`, `payment_id`, `order_amount`, `payment_status`, etc in both the tables.
 - Result: Neither Customer Order nor Payment table had null values in any of the columns.
   ![check for null values in the customer order table](check_null.png)
-  ![check for null values in the customer order table](check_null_2.png)
 
 ### 2. Order and Sales Analysis
 
