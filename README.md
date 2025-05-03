@@ -130,7 +130,7 @@ The customer retention analysis was fully executed and visualized in Tableau usi
   - **Growth and decline in customer acquisition :**
     - The number of customers in each cohort is shown in the second column.Peak acquisition was in 2020 Q1 (676 customers). Numbers generally trend downward in later quarters (e.g., 2025 Q2 only has 39).This could indicate declining user acquisition or narrowing target markets.
 
-💡### ***Business Suggestions Based on Payment Behavior & RFM Segmentation***
+### 💡 ***Business Suggestions Based on Payment Behavior & RFM Segmentation***
 - **Support Customers with High Payment Failures**
 Some customers exhibit high rates of missed or failed payments, which can affect both cash flow and customer experience. The company should:
 
