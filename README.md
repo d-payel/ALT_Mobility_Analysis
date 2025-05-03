@@ -54,15 +54,14 @@ Performed null-value checks on both datasets to assess completeness:
 - Aggregated missing `payment_id`s across different `order_status`
 - Calculated the percentage of missing payments by status  
   **Example:** `"Pending" orders had ~27% missing payments`
-  ![Distribution of Missing Payments](percentage_of_missing_payments.png)
-- Calculated Payment Success Rate of each Customer 
-  ![Distribution of Payment Success Rate at Individual Customer Level](payment_success-rate_by-customer.png)
+  ![Distribution of Missing Payments](percentage_of_missing_payments.png)  
 
 ### 6. 📊 Order-Payment Summary Per Customer
 
 - Summarized each customer’s transaction footprint:
   - Total orders, total payment amount, success/failure/pending counts
   - Computed **payment success rate** and **failure rate** per customer
+    ![Distribution of Payment Success Rate at Individual Customer Level](payment_success-rate_by-customer.png)
 
 ### 7. 📈 Customer Retention Analysis (Cohort)
 
