@@ -35,7 +35,7 @@ Performed null-value checks on both datasets to assess completeness:
   - `Monetary`: total order value
   - [Quantile Table](quantile_table.png)
 - Created scores from 1 to 5 for each metric and assigned customers to **RFM segments** like:
-  - Champions, Loyal Customers, Potential Loyalists, At Risk, Hibernating, Lost, etc.
+  Champions, Loyal Customers, Potential Loyalists, At Risk, Hibernating, Lost, etc.
 - [Final table:](RFM_SEGMENTATION.csv) `quantile` with segment labels
 
 ### 4. Payment Status Analysis
