@@ -68,7 +68,7 @@ Performed null-value checks on both datasets to assess completeness:
 The customer retention analysis was fully executed and visualized in Tableau using a cohort-based approach. Tableau's flexible LOD expressions were used to build a dynamic, interactive retention heatmap.
 
 ### Tableau Visualization
-  📌 **Tableau Logic Breakdown:**
+   **Tableau Logic Breakdown:**
 - Customer Cohort Definition
 
   - Created a calculated field:
