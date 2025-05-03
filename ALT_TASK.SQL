@@ -1,4 +1,3 @@
-<Just checking lmao>
 /* CHECK FOR NULL VALUES IN EACH TABLE*/
 select 
   countif(order_id is Null) as missing_order,
