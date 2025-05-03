@@ -130,6 +130,40 @@ The customer retention analysis was fully executed and visualized in Tableau usi
   - **Growth and decline in customer acquisition :**
     - The number of customers in each cohort is shown in the second column.Peak acquisition was in 2020 Q1 (676 customers). Numbers generally trend downward in later quarters (e.g., 2025 Q2 only has 39).This could indicate declining user acquisition or narrowing target markets.
 
+💡### ***Business Suggestions Based on Payment Behavior & RFM Segmentation***
+- **Support Customers with High Payment Failures**
+Some customers exhibit high rates of missed or failed payments, which can affect both cash flow and customer experience. The company should:
+
+  - Introduce automated payment reminders and retry mechanisms.
+
+  - Provide clearer communication on payment deadlines or issues.
+
+  - Investigate and resolve payment gateway frictions.
+
+- **Recognize and Reward High Success-Rate Customers**
+Customers who consistently complete payments successfully are low-risk and potentially high-value.
+
+  - Prioritize these users for loyalty programs or upgrades.
+
+  - Offer referral bonuses to leverage their positive experience.
+
+Use their behavior patterns to train recommendation models or flag ideal profiles.
+
+- **Enhance Recovery Campaigns Using RFM Tags**
+RFM segmentation reveals dormant and at-risk segments.
+
+  - Customers in “At Risk” or “Hibernating” segments can be targeted with reactivation offers.
+
+  - “Can’t Lose Them” or “Loyal” customers showing recent payment issues need urgent attention.
+
+- **Cross-Analyze Payment Data with RFM to Detect Key Shifts**
+A powerful next step would be to combine the payment behavior with RFM tags:
+
+  - Spot loyal customers whose payment behavior is now declining — a potential early warning for churn.
+
+  - Detect formerly inactive users who are now paying regularly — opportunities for upselling or engagement.
+
+
 
 
 ---
