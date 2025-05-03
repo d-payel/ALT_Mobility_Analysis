@@ -44,7 +44,8 @@ from `alt-mobility-task.customer_orders.customer_orders`
 group by order_status;
 
 -- MONTHLY RANKING BASED ON TOTAL REVENUE GENERATION
-select dense_rank() over (partition by year order by total_revenue desc),*
+with rank_by_rev as(
+  select dense_rank() over (partition by year order by total_revenue desc) rank_,*
 from (
   select
     year, month, 
@@ -52,7 +53,11 @@ from (
   from `alt-mobility-task.customer_orders.orders_with_date_parts`
   group by year, month
   ) as tot_rev
-order by total_revenue desc;
+
+)
+select * from rank_by_rev 
+where rank_ <=3
+order by year;
 
 /* CUSTOMER SEGMENTATION */
 --QUANTILE TABLE CREATION
