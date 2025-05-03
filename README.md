@@ -23,8 +23,9 @@ Performed null-value checks on both datasets to assess completeness:
 ### 2. Order and Sales Analysis
 
 - Computed total orders and revenue grouped by `order_status`
-- [Created a **monthly revenue trend** view and used **`DENSE_RANK()`** to identify top 3 revenue-generating months per year](ranked_month_by_revenue.png)
 - View created: `orders_with_date_parts` with pre-extracted `year` and `month`
+- Created a **monthly revenue trend** view and used **`DENSE_RANK()`** to identify top 3 revenue-generating months per year. [View Table](ranked_month_by_revenue.png)
+
 
 ### 3. Customer Segmentation (RFM Analysis)
 
@@ -35,9 +36,7 @@ Performed null-value checks on both datasets to assess completeness:
   - [Quantile Table](quantile_table.png)
 - Created scores from 1 to 5 for each metric and assigned customers to **RFM segments** like:
   - Champions, Loyal Customers, Potential Loyalists, At Risk, Hibernating, Lost, etc.
-- Final table: `quantile` with segment labels
-  ![Customer with Labels](rfm_segmentation_table.png)
-- [The new table with the cutomers labeled based on their RFM score](RFM_SEGMENTATION.csv)
+- [Final table:](RFM_SEGMENTATION.csv) `quantile` with segment labels
 
 ### 4. Payment Status Analysis
 
@@ -53,14 +52,14 @@ Performed null-value checks on both datasets to assess completeness:
 - Aggregated missing `payment_id`s across different `order_status`
 - Calculated the percentage of missing payments by status  
   **Example:** `"Pending" orders had ~27% missing payments`
-  - [Distribution of Missing Payments](percentage_of_missing_payments.png)  
+- [View Distribution of Missing Payments](percentage_of_missing_payments.png)  
 
 ### 6. Order-Payment Summary Per Customer
 
 - Summarized each customer’s transaction footprint:
   - Total orders, total payment amount, success/failure/pending counts
   - Computed **payment success rate** and **failure rate** per customer
-    - [Distribution of Payment Success Rate at Individual Customer Level](payment_success-rate_by-customer.png)
+  - [View Distribution of Payment Success Rate at Individual Customer Level](payment_success-rate_by-customer.png)
 
 ### 7. Customer Retention Analysis (Cohort)
 
