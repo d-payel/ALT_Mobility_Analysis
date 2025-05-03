@@ -87,18 +87,18 @@ The customer retention analysis was fully executed and visualized in Tableau usi
 - Cohort Size Calculation
 
   - Calculated field:
-    Customers in First Quarter =
+    - Customers in First Quarter =
     { FIXED [Customer's First Quarter] : COUNTD([Customer ID]) }
 
-    Used as a dimension and placed in the Tooltip.
+    - Used as a dimension and placed in the Tooltip.
 
 - Retention Rate Calculation
 
   - Calculated field:
-    Retention Rate =
+    - Retention Rate =
     COUNTD([Customer ID]) / SUM([Customers in First Quarter])
 
-    Converted to percentage and added to Color and Tooltip.
+    - Converted to percentage and added to Color and Tooltip.
 
 - Elapsed Time (Optional for Slicing)
 
