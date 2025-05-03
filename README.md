@@ -1,19 +1,19 @@
-# 📊 Alt Mobility Data Analyst Assignment
+# Alt Mobility Data Analyst Assignment
 
 This repository contains SQL analysis and a Tableau visualization developed as part of the **Data Analyst Internship assignment** for **Alt Mobility**. The project focuses on analyzing customer orders, payment behavior, customer segmentation, and retention trends using **Google BigQuery** and **Tableau**.
 
 ---
 
-## 🗂️ Datasets Used
+## Datasets Used
 
 - `customer_orders.customer_orders`: Order-level data
 - `customer_orders.payments`: Payment-level data
 
 ---
 
-## ✅ Tasks Completed
+## Tasks Completed
 
-### 1. 🧹 Data Quality Check
+### 1. Data Quality Check
 
 Performed null-value checks on both datasets to assess completeness:
 - Checked for missing `order_id`, `payment_id`, `order_amount`, `payment_status`, etc in both the tables.
@@ -21,13 +21,13 @@ Performed null-value checks on both datasets to assess completeness:
   ![check for null values in the customer order table](check_null.png)
   ![check for null values in the customer order table](check_null_2.png)
 
-### 2. 📦 Order and Sales Analysis
+### 2. Order and Sales Analysis
 
 - Computed total orders and revenue grouped by `order_status`
 - Created a **monthly revenue trend** view and used **`DENSE_RANK()`** to identify top 3 revenue-generating months per year
 - View created: `orders_with_date_parts` with pre-extracted `year` and `month`
 
-### 3. 🧮 Customer Segmentation (RFM Analysis)
+### 3. Customer Segmentation (RFM Analysis)
 
 - Built quantile-based RFM segments using:
   - `Recency`: days since last order
@@ -40,7 +40,7 @@ Performed null-value checks on both datasets to assess completeness:
   ![Customer with Labels](rfm_segmentation_table.png)
 - [The new table with the cutomers labeled based on their RFM score](RFM_SEGMENTATION.csv)
 
-### 4. 💳 Payment Status Analysis
+### 4. Payment Status Analysis
 
 - Analyzed total transactions and revenue grouped by `payment_status`
 - Created a **monthly payment trend report** using a view `payments_with_date_parts`
@@ -48,7 +48,7 @@ Performed null-value checks on both datasets to assess completeness:
 - Highlighted months with highest payment failures and analyzed status trends
 - [Table of Payment Status Dynamics](payment_status_dynamics_over_month.png)
 
-### 5. ❌ Missing Payments Report
+### 5. Missing Payments Report
 
 - Created a full joined table of orders and payments using `LEFT JOIN`
 - Aggregated missing `payment_id`s across different `order_status`
@@ -56,18 +56,18 @@ Performed null-value checks on both datasets to assess completeness:
   **Example:** `"Pending" orders had ~27% missing payments`
   ![Distribution of Missing Payments](percentage_of_missing_payments.png)  
 
-### 6. 📊 Order-Payment Summary Per Customer
+### 6. Order-Payment Summary Per Customer
 
 - Summarized each customer’s transaction footprint:
   - Total orders, total payment amount, success/failure/pending counts
   - Computed **payment success rate** and **failure rate** per customer
     ![Distribution of Payment Success Rate at Individual Customer Level](payment_success-rate_by-customer.png)
 
-### 7. 📈 Customer Retention Analysis (Cohort)
+### 7. Customer Retention Analysis (Cohort)
 
 The customer retention analysis was fully executed and visualized in Tableau using a cohort-based approach. Tableau's flexible LOD expressions were used to build a dynamic, interactive retention heatmap.
 
-### 📊 Tableau Visualization
+### Tableau Visualization
   📌 **Tableau Logic Breakdown:**
 - Customer Cohort Definition
 
@@ -130,7 +130,7 @@ The customer retention analysis was fully executed and visualized in Tableau usi
   - **Growth and decline in customer acquisition :**
     - The number of customers in each cohort is shown in the second column.Peak acquisition was in 2020 Q1 (676 customers). Numbers generally trend downward in later quarters (e.g., 2025 Q2 only has 39).This could indicate declining user acquisition or narrowing target markets.
 
-### 💡 ***Business Suggestions Based on Payment Behavior & RFM Segmentation***
+### ***Business Suggestions Based on Payment Behavior & RFM Segmentation***
 - **Support Customers with High Payment Failures**
 Some customers exhibit high rates of missed or failed payments, which can affect both cash flow and customer experience. The company should:
 
