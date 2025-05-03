@@ -117,19 +117,19 @@ The customer retention analysis was fully executed and visualized in Tableau usi
   **Insights:**
   
   - **Retention drops sharply after initial acquisition :**
-    Across all cohorts, there is a steep drop in retention  from month 0 (100%) to month 1.
-    Example: 2020 Q1 drops from 100% to 7.4% in month 1. This suggests a large portion of users churn immediately after joining.
+    - Across all cohorts, there is a steep drop in retention  from month 0 (100%) to month 1.
+    - Example: 2020 Q1 drops from 100% to 7.4% in month 1. This suggests a large portion of users churn immediately after joining.
   - **Long-term retention stabilizes for early cohorts :**
-    Some early cohorts like 2020 Q1 – Q3 and 2021 Q1 – Q3 show consistent retention beyond 12+ months.
-    Example: 2020 Q2 maintains 2.4% even at month 21.
+    - Some early cohorts like 2020 Q1 – Q3 and 2021 Q1 – Q3 show consistent retention beyond 12+ months.
+    - Example: 2020 Q2 maintains 2.4% even at month 21.
   - **Recent cohorts have not matured yet :**
-    Recent cohorts like 2024 Q2–2025 Q2 show very few data points, as not enough time has elapsed. These rows are sparse, and their long-term retention is yet to be      observed.
+    - Recent cohorts like 2024 Q2–2025 Q2 show very few data points, as not enough time has elapsed. These rows are sparse, and their long-term retention is yet to be observed.
   - **2022 cohorts show relatively better short-term retention :**
-    Notably, 2022 Q3 and Q4 have higher retention rates in early months (e.g., 10.9%, 11.9%).This might indicate successful campaigns or improvements during that         period.
+    - Notably, 2022 Q3 and Q4 have higher retention rates in early months (e.g., 10.9%, 11.9%).This might indicate successful campaigns or improvements during that period.
   - **Some cohorts have standout drop-offs :**
-    For instance, 2023 Q2 starts with high initial month-1 retention (7.3%) but rapidly drops to <1% by month 5. This could suggest poor engagement or product issues     post-onboarding.
+    - For instance, 2023 Q2 starts with high initial month-1 retention (7.3%) but rapidly drops to <1% by month 5. This could suggest poor engagement or product issues post-onboarding.
   - **Growth and decline in customer acquisition :**
-    The number of customers in each cohort is shown in the second column.Peak acquisition was in 2020 Q1 (676 customers). Numbers generally trend downward in later       quarters (e.g., 2025 Q2 only has 39).This could indicate declining user acquisition or narrowing target markets.
+    - The number of customers in each cohort is shown in the second column.Peak acquisition was in 2020 Q1 (676 customers). Numbers generally trend downward in later quarters (e.g., 2025 Q2 only has 39).This could indicate declining user acquisition or narrowing target markets.
 
 
 
