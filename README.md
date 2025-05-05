@@ -165,22 +165,3 @@ A powerful next step would be to combine the payment behavior with RFM tags:
 
 
 ---
-
-## 📁 Folder Structure
-
-```bash
-.
-├── sql_queries/
-│   ├── data_quality_check.sql
-│   ├── order_sales_analysis.sql
-│   ├── customer_segmentation_rfm.sql
-│   ├── payment_status_analysis.sql
-│   ├── order_payment_summary.sql
-│   ├── missing_payment_report.sql
-│   └── retention_cohort_analysis.sql
-├── visualizations/
-│   └── retention_rate_visualization_task5.png
-├── output/
-│   └── rfm_segments_table.csv
-├── summary_of_findings.pdf
-└── README.md
