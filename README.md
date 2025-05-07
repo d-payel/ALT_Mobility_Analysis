@@ -1,6 +1,7 @@
-# Alt Mobility Data Analyst Assignment
+# Customer Segmentation & Retention Analysis Using SQL + Tableau
 
-This repository contains SQL analysis and a Tableau visualization developed as part of the **Data Analyst Internship assignment** for **Alt Mobility**. The project focuses on analyzing customer orders, payment behavior, customer segmentation, and retention trends using **Google BigQuery** and **Tableau**.
+
+This project demonstrates customer segmentation using RFM scoring and a detailed retention analysis using SQL (BigQuery) and Tableau.
 
 ---
 
